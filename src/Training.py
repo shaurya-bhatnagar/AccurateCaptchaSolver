@@ -74,6 +74,7 @@ class Training:
         model = logistic_regression.fit(x_train, y_train)
 
         # save trained model to disk
+        os.makedirs(os.path.dirname(self.model_path), exist_ok=True)
         joblib.dump(model, self.model_path)
 
 
